@@ -1,0 +1,452 @@
+C:\project\MyApp\js\common.js:2:5: Missing 'use strict' statement.
+	return {
+    ^
+C:\project\MyApp\js\models\projects.js:7:2: Mixed spaces and tabs.
+  	rootUrl : '/share',
+ ^
+C:\project\MyApp\js\models\test.js:7:2: Mixed spaces and tabs.
+  	rootUrl : '/share',
+ ^
+C:\project\MyApp\js\models\test.js:14:4: Mixed spaces and tabs.
+    	return this.rootUrl;
+   ^
+C:\project\MyApp\js\models\todo.js:9:6: Mixed spaces and tabs.
+      	remaining: '0',
+     ^
+C:\project\MyApp\js\models\todo.js:10:6: Mixed spaces and tabs.
+      	completed:'0'
+     ^
+C:\project\MyApp\js\models\todo.js:13:6: Unexpected ','.
+    },
+     ^
+C:\project\MyApp\js\models\users.js:10:5: Mixed spaces and tabs.
+	    		{ name: 'Tom', age: '10', height: '150', weight: '40'}
+    ^
+C:\project\MyApp\js\router.js:46:2: Mixed spaces and tabs.
+  	initialize = function(){
+ ^
+C:\project\MyApp\js\router.js:47:4: Mixed spaces and tabs.
+    	var app_router = new AppRouter();
+   ^
+C:\project\MyApp\js\router.js:48:4: Mixed spaces and tabs.
+    	Backbone.history.start();
+   ^
+C:\project\MyApp\js\views\home\main.js:17:4: Mixed spaces and tabs.
+    	var str = '/share/Multimedia/TV/Record/201209032000_DiMo.ts', ary, path="";
+   ^
+C:\project\MyApp\js\views\home\main.js:18:4: Mixed spaces and tabs.
+    	ary = str.split('/');
+   ^
+C:\project\MyApp\js\views\home\main.js:19:4: Mixed spaces and tabs.
+    	if(ary[1]==='share'){
+   ^
+C:\project\MyApp\js\views\home\main.js:20:4: Mixed spaces and tabs.
+    		ary.shift();
+   ^
+C:\project\MyApp\js\views\home\main.js:21:4: Mixed spaces and tabs.
+    		ary.shift();
+   ^
+C:\project\MyApp\js\views\home\main.js:22:4: Mixed spaces and tabs.
+    	}
+   ^
+C:\project\MyApp\js\views\home\main.js:23:4: Mixed spaces and tabs.
+    	_.each(ary, function(cell){
+   ^
+C:\project\MyApp\js\views\home\main.js:24:4: Mixed spaces and tabs.
+    		path +="/"+cell;
+   ^
+C:\project\MyApp\js\views\home\main.js:25:4: Mixed spaces and tabs.
+    	});
+   ^
+C:\project\MyApp\js\views\home\main.js:26:4: Mixed spaces and tabs.
+    	console.log('ary[0] : '+ary[0]);
+   ^
+C:\project\MyApp\js\views\home\main.js:26:9: 'console' was used before it was defined.
+    	console.log('ary[0] : '+ary[0]);
+        ^
+C:\project\MyApp\js\views\home\main.js:27:4: Mixed spaces and tabs.
+    	console.log('ary[1] : '+ary[1]);
+   ^
+C:\project\MyApp\js\views\home\main.js:28:4: Mixed spaces and tabs.
+    	console.log('ary[2] : '+ary[2]);
+   ^
+C:\project\MyApp\js\views\home\main.js:29:4: Mixed spaces and tabs.
+    	console.log('path : '+path);
+   ^
+C:\project\MyApp\js\views\home\main.js:32:4: Mixed spaces and tabs.
+    	$('#localimg').off();
+   ^
+C:\project\MyApp\js\views\home\main.js:33:4: Mixed spaces and tabs.
+    	$('#remoteimg').off();
+   ^
+C:\project\MyApp\js\views\home\main.js:34:4: Mixed spaces and tabs.
+    	
+   ^
+C:\project\MyApp\js\views\home\main.js:35:4: Mixed spaces and tabs.
+    	$('#localimg').on('click', function(){
+   ^
+C:\project\MyApp\js\views\home\main.js:36:4: Mixed spaces and tabs.
+    		var path = 'img/test_and_meas.gif';
+   ^
+C:\project\MyApp\js\views\home\main.js:37:4: Mixed spaces and tabs.
+    		$('img#testimg').attr('src', path);
+   ^
+C:\project\MyApp\js\views\home\main.js:38:4: Mixed spaces and tabs.
+    		$('img#testimg').off();
+   ^
+C:\project\MyApp\js\views\home\main.js:39:4: Mixed spaces and tabs.
+    		$('img#testimg').load(function() {
+   ^
+C:\project\MyApp\js\views\home\main.js:40:12: Mixed spaces and tabs.
+				        	console.log('image loaded.');
+           ^
+C:\project\MyApp\js\views\home\main.js:40:29: 'console' was used before it was defined.
+				        	console.log('image loaded.');
+                            ^
+C:\project\MyApp\js\views\home\main.js:41:7: Mixed spaces and tabs.
+				   		});
+      ^
+C:\project\MyApp\js\views\home\main.js:43:29: 'console' was used before it was defined.
+							console.log("error loading image"); 
+                            ^
+C:\project\MyApp\js\views\home\main.js:45:4: Mixed spaces and tabs.
+    	});
+   ^
+C:\project\MyApp\js\views\home\main.js:46:4: Mixed spaces and tabs.
+    	
+   ^
+C:\project\MyApp\js\views\home\main.js:47:4: Mixed spaces and tabs.
+    	$('#remoteimg').on('click', function(){
+   ^
+C:\project\MyApp\js\views\home\main.js:48:4: Mixed spaces and tabs.
+    		var path = $('#srcpath').val().trim();
+   ^
+C:\project\MyApp\js\views\home\main.js:49:4: Mixed spaces and tabs.
+    		$('img#testimg').attr('src', path);
+   ^
+C:\project\MyApp\js\views\home\main.js:50:4: Mixed spaces and tabs.
+    		$('img#testimg').off();
+   ^
+C:\project\MyApp\js\views\home\main.js:51:4: Mixed spaces and tabs.
+    		$('img#testimg').load(function() {
+   ^
+C:\project\MyApp\js\views\home\main.js:52:12: Mixed spaces and tabs.
+				        	console.log('image loaded.');
+           ^
+C:\project\MyApp\js\views\home\main.js:52:29: 'console' was used before it was defined.
+				        	console.log('image loaded.');
+                            ^
+C:\project\MyApp\js\views\home\main.js:53:7: Mixed spaces and tabs.
+				   		});
+      ^
+C:\project\MyApp\js\views\home\main.js:55:29: 'console' was used before it was defined.
+							console.log("error loading image"); 
+                            ^
+C:\project\MyApp\js\views\home\main.js:57:4: Mixed spaces and tabs.
+    	});
+   ^
+C:\project\MyApp\js\views\test\test.js:11:2: Mixed spaces and tabs.
+  	
+ ^
+C:\project\MyApp\js\views\test\test.js:18:4: Mixed spaces and tabs.
+    	this.model = new TestModel();
+   ^
+C:\project\MyApp\js\views\test\test.js:26:4: Mixed spaces and tabs.
+    	$('span#action').html('action : Initialized');
+   ^
+C:\project\MyApp\js\views\test\test.js:27:4: Mixed spaces and tabs.
+    	$('span#rootUrl').html('rootUrl : '+this.model.rootUrl);
+   ^
+C:\project\MyApp\js\views\test\test.js:28:4: Mixed spaces and tabs.
+    	$('span#score').html('score : '+this.model.get('score'));
+   ^
+C:\project\MyApp\js\views\test\test.js:31:4: Mixed spaces and tabs.
+    	$('#bindtest').off();
+   ^
+C:\project\MyApp\js\views\test\test.js:32:4: Mixed spaces and tabs.
+    	
+   ^
+C:\project\MyApp\js\views\test\test.js:33:4: Mixed spaces and tabs.
+    	$('#bindtest').on('click', function(){
+   ^
+C:\project\MyApp\js\views\test\test.js:34:4: Mixed spaces and tabs.
+    		alert('Hello World!');
+   ^
+C:\project\MyApp\js\views\test\test.js:34:13: 'alert' was used before it was defined.
+    		alert('Hello World!');
+            ^
+C:\project\MyApp\js\views\test\test.js:35:4: Mixed spaces and tabs.
+    	});
+   ^
+C:\project\MyApp\js\views\test\test.js:38:4: Mixed spaces and tabs.
+    	console.log('update data!');
+   ^
+C:\project\MyApp\js\views\test\test.js:38:9: 'console' was used before it was defined.
+    	console.log('update data!');
+        ^
+C:\project\MyApp\js\views\test\test.js:39:4: Mixed spaces and tabs.
+    	this.model.rootUrl = "/public/photos";
+   ^
+C:\project\MyApp\js\views\test\test.js:40:4: Mixed spaces and tabs.
+    	this.model.set('score', 76);
+   ^
+C:\project\MyApp\js\views\test\test.js:41:4: Mixed spaces and tabs.
+    	$('span#action').html('action : Update Data');
+   ^
+C:\project\MyApp\js\views\test\test.js:42:4: Mixed spaces and tabs.
+    	//$('span#rootUrl').html('rootUrl : '+this.model.get('rootUrl'));
+   ^
+C:\project\MyApp\js\views\test\test.js:43:4: Mixed spaces and tabs.
+    	$('span#rootUrl').html('rootUrl : '+this.model.rootUrl);
+   ^
+C:\project\MyApp\js\views\test\test.js:44:4: Mixed spaces and tabs.
+    	$('span#score').html('score : '+this.model.get('score'));
+   ^
+C:\project\MyApp\js\views\test\test.js:47:4: Mixed spaces and tabs.
+    	console.log('restore data!');
+   ^
+C:\project\MyApp\js\views\test\test.js:47:9: 'console' was used before it was defined.
+    	console.log('restore data!');
+        ^
+C:\project\MyApp\js\views\test\test.js:48:4: Mixed spaces and tabs.
+    	this.model.rootUrl = "/share";
+   ^
+C:\project\MyApp\js\views\test\test.js:49:4: Mixed spaces and tabs.
+    	this.model.set('score', 10);
+   ^
+C:\project\MyApp\js\views\test\test.js:50:4: Mixed spaces and tabs.
+    	$('span#action').html('action : Restore Data');
+   ^
+C:\project\MyApp\js\views\test\test.js:51:4: Mixed spaces and tabs.
+    	$('span#rootUrl').html('rootUrl : '+this.model.rootUrl);
+   ^
+C:\project\MyApp\js\views\test\test.js:52:4: Mixed spaces and tabs.
+    	$('span#score').html('score : '+this.model.get('score'));
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:20:4: Mixed spaces and tabs.
+    	'keypress #new-todo':'AddItem',
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:21:4: Mixed spaces and tabs.
+    	'click .destroy':'DeleteItem',
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:22:4: Mixed spaces and tabs.
+    	'click .toggle':'ToggleCompleted',
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:23:4: Mixed spaces and tabs.
+    	'click #toggle-all':'ToggleAll',
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:24:4: Mixed spaces and tabs.
+    	'click #clear-completed':'ClearCompleted',
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:25:4: Mixed spaces and tabs.
+    	'change #todo-list input':'Completed'
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:29:4: Mixed spaces and tabs.
+    	console.log("TodoListView Create");
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:29:9: 'console' was used before it was defined.
+    	console.log("TodoListView Create");
+        ^
+C:\project\MyApp\js\views\todolist\todolist.js:30:4: Mixed spaces and tabs.
+    	this.model = new TodoModel();
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:35:6: Mixed spaces and tabs.
+      	this.$el.html( todolistTemplate ); //load main todolist Template
+     ^
+C:\project\MyApp\js\views\todolist\todolist.js:36:6: Mixed spaces and tabs.
+      	this.input = this.$('#new-todo'); 
+     ^
+C:\project\MyApp\js\views\todolist\todolist.js:37:6: Mixed spaces and tabs.
+      	this.ul = this.$('#todo-list');
+     ^
+C:\project\MyApp\js\views\todolist\todolist.js:38:6: Mixed spaces and tabs.
+      	this.footer = this.$('footer');
+     ^
+C:\project\MyApp\js\views\todolist\todolist.js:64:4: Mixed spaces and tabs.
+    	this.$(e.target).parent('li').remove();
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:65:4: Mixed spaces and tabs.
+    	this.CountLength(); //count items left
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:66:4: Mixed spaces and tabs.
+    	this.ToggleCompleted(); //count checked items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:69:30: Mixed spaces and tabs.
+    CountLength: function(){  	
+                             ^
+C:\project\MyApp\js\views\todolist\todolist.js:72:4: Mixed spaces and tabs.
+    	this.model.set('remaining',num); //set value to model
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:73:4: Mixed spaces and tabs.
+    	//show remaining numbers
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:74:4: Mixed spaces and tabs.
+    	this.$('span#todo-count strong')
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:75:4: Mixed spaces and tabs.
+    		.html(this.model.get('remaining'));
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:76:4: Mixed spaces and tabs.
+    	//hide toggle-all checkbox if no items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:77:4: Mixed spaces and tabs.
+    	if (this.$('#todo-list li').length ===0){
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:78:4: Mixed spaces and tabs.
+    		this.$('#toggle-all').hide();
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:79:4: Mixed spaces and tabs.
+    	} 	
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:80:4: Mixed spaces and tabs.
+    	return ;
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:84:4: Mixed spaces and tabs.
+    	// count completed items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:85:4: Mixed spaces and tabs.
+    	this.model.set('completed',this.$('#todo-list input:checked').length);
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:86:4: Mixed spaces and tabs.
+    	//show completed numbers
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:87:4: Mixed spaces and tabs.
+    	this.$('button#clear-completed')
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:88:4: Mixed spaces and tabs.
+    		.html("Clear completed ("+this.model.get('completed')+")");		
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:89:1: Mixed spaces and tabs.
+ 		this.CountLength(); //count items left
+^
+C:\project\MyApp\js\views\todolist\todolist.js:90:4: Mixed spaces and tabs.
+    	return;
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:94:4: Mixed spaces and tabs.
+    	//clear Completed items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:95:4: Mixed spaces and tabs.
+    	this.$('.toggle:checked').parent('li').remove();
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:96:4: Mixed spaces and tabs.
+    	this.CountLength(); //count items left
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:97:4: Mixed spaces and tabs.
+    	this.ToggleCompleted(); //count checked items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:101:4: Mixed spaces and tabs.
+    	//toggle all checkboxes
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:102:4: Mixed spaces and tabs.
+    	if (this.$('#toggle-all').prop('checked')) {
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:103:4: Mixed spaces and tabs.
+    		this.$('.toggle').attr('checked','checked');
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:104:4: Mixed spaces and tabs.
+    		this.$('span#todo-count strong').html(0); 	
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:105:4: Mixed spaces and tabs.
+    	}
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:106:4: Mixed spaces and tabs.
+    	else{
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:107:4: Mixed spaces and tabs.
+    		this.$('.toggle').removeAttr('checked');
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:108:4: Mixed spaces and tabs.
+    		this.$('span#todo-count strong')
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:109:4: Mixed spaces and tabs.
+    		.html(this.$('#todo-list input').length);		
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:110:4: Mixed spaces and tabs.
+    	}
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:111:4: Mixed spaces and tabs.
+    	//add completed line if checked items
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:112:4: Mixed spaces and tabs.
+    	var self = this;
+   ^
+C:\project\MyApp\js\views\todolist\todolist.js:113:1: Mixed spaces and tabs.
+ 		this.$('#toggle-all').change(function(){
+^
+C:\project\MyApp\js\views\todolist\todolist.js:113:1: Too many errors. (84% scanned).
+C:\project\MyApp\js\views\users\list.js:16:5: Mixed spaces and tabs.
+	    	"click #triggerAddEvent": "addItem",
+    ^
+C:\project\MyApp\js\views\users\list.js:17:5: Mixed spaces and tabs.
+	    	
+    ^
+C:\project\MyApp\js\views\users\list.js:16:48: Unexpected ','.
+	    	"click #triggerAddEvent": "addItem",
+                                               ^
+C:\project\MyApp\js\views\users\list.js:21:5: Mixed spaces and tabs.
+	    	this.model = new UsersModel();
+    ^
+C:\project\MyApp\js\views\users\list.js:22:5: Mixed spaces and tabs.
+	    		  	
+    ^
+C:\project\MyApp\js\views\users\list.js:26:5: Mixed spaces and tabs.
+	    	this.$el.html(userListTemplate);
+    ^
+C:\project\MyApp\js\views\users\list.js:27:5: Mixed spaces and tabs.
+	    	this.updateContainer();   	   	
+    ^
+C:\project\MyApp\js\views\users\list.js:28:5: Mixed spaces and tabs.
+	    	//var element = jQuery.tmpl(userListTemplate, this.model.toJSON());
+    ^
+C:\project\MyApp\js\views\users\list.js:33:30: Mixed spaces and tabs.
+	    addItem: function(){	    	
+                             ^
+C:\project\MyApp\js\views\users\list.js:34:5: Mixed spaces and tabs.
+	    	//new data
+    ^
+C:\project\MyApp\js\views\users\list.js:35:5: Mixed spaces and tabs.
+	    	var newone = {
+    ^
+C:\project\MyApp\js\views\users\list.js:36:5: Mixed spaces and tabs.
+	    		name: $('#name-field').val(), 
+    ^
+C:\project\MyApp\js\views\users\list.js:37:5: Mixed spaces and tabs.
+	    		age: $('#age-field').val(), 
+    ^
+C:\project\MyApp\js\views\users\list.js:38:5: Mixed spaces and tabs.
+	    		height: $('#height-field').val(), 
+    ^
+C:\project\MyApp\js\views\users\list.js:39:5: Mixed spaces and tabs.
+	    		weight: $('#weight-field').val()
+    ^
+C:\project\MyApp\js\views\users\list.js:40:5: Mixed spaces and tabs.
+	    	};	    	
+    ^
+C:\project\MyApp\js\views\users\list.js:41:5: Mixed spaces and tabs.
+	    	//remove input value
+    ^
+C:\project\MyApp\js\views\users\list.js:42:5: Mixed spaces and tabs.
+	    	this.$('#user-form').find(':input').val("");
+    ^
+C:\project\MyApp\js\views\users\list.js:43:5: Mixed spaces and tabs.
+	    	
+    ^
+C:\project\MyApp\js\views\users\list.js:44:5: Mixed spaces and tabs.
+	    	var temp = [];
+    ^
+C:\project\MyApp\js\views\users\list.js:44:17: Combine this with the previous 'var' statement.
+	    	var temp = [];
+                ^
+C:\project\MyApp\js\views\users\list.js:45:5: Mixed spaces and tabs.
+	    	var data = this.model.get('data'); 
+    ^
+C:\project\MyApp\js\views\users\list.js:45:17: Combine this with the previous 'var' statement.
+	    	var data = this.model.get('data'); 
+                ^
+C:\project\MyApp\js\views\users\list.js:46:5: Mixed spaces and tabs.
+	    	for(var i=0;i<data.length;i++){
+    ^
+C:\project\MyApp\js\views\users\list.js:46:17: Move 'var' declarations to the top of the function.
+	    	for(var i=0;i<data.length;i++){
+                ^
+C:\project\MyApp\js\views\users\list.js:46:17: Stopping.  (56% scanned).

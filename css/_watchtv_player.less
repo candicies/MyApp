@@ -1,0 +1,373 @@
+.watch-area {
+  background:url(../img/stripe-pattern.png);
+  .container {
+    padding-bottom:15px;
+    position:relative;
+  }
+  #watchtv_player { 
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+    z-index:10;
+    .player {
+      box-shadow:0 0 40px rgba(0,0,0,0.95); 
+      position:relative;
+      background-color:#000;
+      z-index:@zindexDropdown - 100;
+      width:560px;
+      /*height:455px;*/
+      margin:0 auto;
+      //@transition: width 3s, height 3s, transform 3s;
+      //.transition(@transition);
+      .vlcsmall {
+        width:220px;
+        height:160px;        
+        //@transition: width 0.3s, height 0.3s, transform 0.3s;
+        //.transition(@transition);
+        transition: width 0.3s, height 0.3s, transform 0.3s;
+        -moz-transition: width 0.3s, height 0.3s, -moz-transform 0.3s;
+        -webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s;
+        -o-transition: width 0.3s, height 0.3s,-o-transform 0.3s;
+      }
+      .vlcmedium {
+        width:560px;
+        height:420px;
+        //@transition: width 3s, height 3s, transform 3s;
+        //.transition(@transition);
+        transition: width 0.5s, height 0.5s, transform 0.5s;
+        -moz-transition: width 0.5s, height 0.5s, -moz-transform 0.5s;
+        -webkit-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s;
+        -o-transition: width 0.5s, height 0.5s,-o-transform 0.5s;
+      }
+      .controller {
+        height:34px;
+        margin-top:-5px;
+        border-top:1px solid #343434;
+        #gradient > .vertical(#282828, #0b0b0b);
+        .speedstatus {
+          float:right;
+          color:#282828;
+          margin-right:10px;
+          padding:2px 4px;
+          .border-radius(3px);
+          background:#fff;
+          margin-top:9px;
+          .opacity(70);
+          font-size:10px;
+          font-weight:bold;
+          line-height:10px;
+        }
+        .speed {
+          float:left;
+          margin-right:-10px;
+          margin-top:4px;
+          margin-left:5px;
+          .speedItems {
+            div {
+              color:#c5c7c9;
+            }
+          }
+          .browse {
+            text-indent:-10000px;
+            background:none;
+            width:20px;
+            height:20px;
+            display:block;
+            float:left;
+            cursor:pointer;
+            background:url(../img/ctrl-tools.png) 0 0 no-repeat;
+            .opacity(50);
+            &:hover {
+              .opacity(80);
+            }
+            &.left {
+              background-position:-3px -339px;
+            }
+            &.right {
+              position:absolute;
+              right:0;
+              top:0;
+              background-position:-4px -313px;
+            }
+            &.disabled {
+              cursor:default;
+              .opacity(10);
+              &:hover {
+                .opacity(10);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.small {
+    height:200px;
+    margin-bottom:20px;
+    border-bottom:1px solid #848484;
+    //@transition: height 0.3s, transform 0.3s;
+    //.transition(@transition);
+    transition: height 0.5s, transform 0.5s;
+    -moz-transition: height 0.5s, -moz-transform 0.5s;
+    -webkit-transition: height 0.5s, -webkit-transform 0.5s;
+    -o-transition: height 0.5s,-o-transform 0.5s;
+    #watchtv_player { 
+      position:absolute;
+      top:0;
+      .player { 
+        box-shadow:0 0 20px rgba(0,0,0,0.95); 
+        width:220px;
+        height:160px;
+        float:left;
+        //@transition: width 0.3s, height 0.3s, transform 0.3s;
+        //.transition(@transition);
+        transition: width 0.3s, height 0.3s, transform 0.3s;
+        -moz-transition: width 0.3s, height 0.3s, -moz-transform 0.3s;
+        -webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s;
+        -o-transition: width 0.3s, height 0.3s,-o-transform 0.3s;
+      }
+    }
+    .container {
+      height:185px;
+      .channel-pg {
+        padding-top:20px;
+      }
+    }
+  }
+  &.medium {
+    height:500px;
+    margin-bottom:20px;
+    border-bottom:1px solid #848484;
+    //@transition: height 0.4s, transform 0.4s;
+    //.transition(@transition);
+    transition: height 0.4s, transform 0.4s;
+    -moz-transition: height 0.4s, -moz-transform 0.4s;
+    -webkit-transition: height 0.4s, -webkit-transform 0.4s;
+    -o-transition: height 0.4s,-o-transform 0.4s;
+    #watchtv_player { 
+      position:absolute;
+      top:0;
+      .player { 
+        width:560px;
+        height:420px;
+        //@transition: width 0.4s, height 0.4s, transform 0.4s;
+        //.transition(@transition);
+        transition: width 0.5s, height 0.5s, transform 0.5s;
+        -moz-transition: width 0.5s, height 0.5s, -moz-transform 0.5s;
+        -webkit-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s;
+        -o-transition: width 0.5s, height 0.5s,-o-transform 0.5s;
+      }
+    }
+    .container {
+      height:485px;
+    }
+  }
+  &.init {
+    height:80px;
+    -moz-transition:height 0.3s ease-in;
+    -o-transition:height 0.3s ease-in;
+    -webkit-transition:height 0.3s ease-in;
+    .container {
+      height:80px;
+    }
+  }
+}
+
+// small player
+.player {
+  &.big {
+    width:560px;
+    height:420px;
+  }
+}
+.channel-pg {
+  color:@white;
+  padding-left:250px;
+  .pg-title {
+    font-size:@baseFontSize + 6px;
+    margin-bottom:10px;
+    color:@white;
+  }
+  .pg-desc {
+    
+  }
+  .pg-time{
+    position:absolute;
+    bottom:15px;
+  }
+}
+
+.ctrl {
+  float:left;
+  width:27px;
+  height:26px;
+  text-indent:-10000px;
+  background:url(../img/ctrl-tools.png) 0 0 no-repeat;
+  .opacity(50);
+  margin-top:3px;
+  margin-left:10px;
+  &:hover {
+    cursor:pointer;
+    .opacity(80);
+  }
+  &.vlcplay {
+    background-position:0 0;
+    float:left;
+    margin-left:15px;
+    &.stop{
+      background-position:0 -26px;
+    }
+    &.pause{
+      background-position:0 -234px;
+    }
+  }
+  &.vlcplayDVR {
+    background-position:0 0;
+    float:left;
+    margin-left:15px;
+    &.stop{
+      background-position:0 -26px;
+    }
+    &.pause{
+      background-position:0 -234px;
+    }
+  }
+  &.vlcpause{
+    background-position:0 -234px;
+  }
+  &.vlcstop {
+    background-position:0 -26px;
+  }
+  &.vlcforward {
+    background-position:0 -286px;
+  }
+  &.vlcrewind {
+    background-position:0 -260px;
+  }
+  &.vlcvolume {
+    background-position:0 -78px;
+  }
+  &.vlcv-0 {
+    background-position:0 -52px;
+  }
+  &.vlcv-1 {
+    background-position:0 -78px;
+  }
+  &.vlcv-2 {
+    background-position:0 -104px;
+  }
+  &.vlcv-3 {
+    background-position:0 -130px;
+  }
+  &.vlcfullscreen {
+    float:right;
+    background-position:0 -156px;
+    margin-left:0px;
+    margin-right:15px;
+  }
+  &.vlcfavorite {
+    float:right;
+    background-position:0 -182px;
+    margin-left:0px;
+    margin-right:15px;
+    &.added {
+      background-position:0 -208px;
+      .opacity(80);
+    }
+  }
+  &.vlcrecordnow {
+    float:right;
+    background-position:0 -208px;
+    margin-left:0px;
+    margin-right:15px;
+  }
+  &.line {
+    margin:0;
+    padding:0;
+    width:0;
+    height:33px;
+    border-right:1px solid #414141;
+    border-left:1px solid #161616;
+    float:left;
+    margin-left:15px;
+    &.right {
+      float:right;
+      margin-left:0;
+      margin-right:15px;
+    }
+  }
+}
+
+
+.time-stamp {
+  font-size:@baseFontSize - 1px;
+  color:#fff;
+  margin-right:-7px;
+  padding:8px 0 0 15px;
+  float:left;
+  //font-weight:bold;
+  text-shadow: 0 2px 2px rgba(0,0,0,.85);
+  span {
+    color:#5e5e5e;
+  }
+}
+
+/*** overwrite jQuery UI slider ***/
+.ui-slider { 
+  top:4px; 
+}
+.ui-widget-content {
+  background:none;
+  border-color:#191919;
+  #gradient > .vertical(#111111, #161616);
+}
+.ui-slider-range { 
+  .border-radius(4px);
+  background:none;
+  #gradient > .vertical(#3bce3b, #339a33);
+}
+.ui-slider-horizontal .ui-slider-handle { 
+  top:-5px; 
+  margin-left:-2px; 
+}
+.ui-slider-handle.ui-corner-all {
+  .border-radius(3px);
+}
+.ui-state-default, .ui-widget-content .ui-state-default {
+  background:none;
+  border-color:#a5a5a5;
+  #gradient > .vertical(#f1f1f1, #b1b1b1);
+}
+
+.volume-slider {
+  height:5px; 
+  width:80px; 
+  display:inline-block;
+  margin-top:7px;
+  margin-left:6px;
+}
+
+
+.channel-switch {
+  width:72px;
+  height:72px;
+  background:url(../img/channel-switch.png) 0 0 no-repeat;
+  position:absolute;
+  top:190px;
+  .opacity(30);
+  &.prev-channel {
+    left:-92px;
+  }
+  &.next-channel {
+    right:-92px;
+    background-position:-72px 0;
+  }
+  &:hover {
+    .opacity(70);
+  }
+}
+
+#coverImage {
+  height: 425px;
+  background:url(../img/thumb-big.png) center center no-repeat;
+}

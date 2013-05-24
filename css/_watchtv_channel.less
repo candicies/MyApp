@@ -1,0 +1,191 @@
+.channel-area {
+  background:url(../img/stripe-half.png);
+  height:58px;
+  width:100%;
+  .channel-bar {
+    margin:0;
+    position:relative;
+    height:0;
+    z-index:10;
+    span {
+      position:absolute;
+      display:block;
+      height:58px;
+      top:0;
+    }
+    .left {
+      background:url(../img/channel-bar-left.png) right 0 no-repeat;
+      width:50px;
+      left:0;
+    }
+    .right {
+      background:url(../img/channel-bar-right.png) left 0 no-repeat;
+      width:50px;
+      right:0;
+    }
+    .center {
+      position:relative;
+      margin-left:50px;
+      margin-right:50px;
+      top:0;
+      background:@black;
+    }
+  }
+}
+
+#watchtv_channel {
+  .btn-group{
+    width:49px;
+    &.btn1 {
+      float:left;
+    }
+  }
+  .dropdown-menu {
+    background:#09101d;
+    padding:9px;
+    border:1px solid #2a2f36;
+    .border-radius(0); 
+    .opacity(95);
+    //min-width:260px;
+    //_width:260px;
+    width:200px;
+    top:-348px;//need to modify
+    left:-85px; 
+    .nav-header {
+      background:#09101d;
+      font-weight:bold;
+      color:@white;
+      padding-bottom:6px;
+    }
+    .close {
+      color:@white;
+      .opacity(70);
+      text-shadow: 0 0 0 #FFFFFF;
+      padding-right:0;
+      border:0;
+      background:none;
+      &:hover {
+        .opacity(100);
+      }
+    }
+    .channel-dropdown {
+      width: 200px;
+      height: 300px;
+      overflow: auto;
+    }
+    .channel-list,.favorite-list{    
+      padding:0;
+      margin:0; // override default ul
+      list-style:none;
+      li {
+        background:#3b475b;
+        
+        a {
+          color:@white;
+          padding:6px;
+          position:relative;
+          outline:none;
+          i {
+            float: right;
+            position:absolute;
+            bottom:2px;
+            right:4px;
+            &.qtool {
+              width:27px;
+              height:26px;
+              background:url(../img/ctrl-tools.png) 0 0 no-repeat;
+              .opacity(40);
+              &:hover {
+                .opacity(70);
+              }
+              &.favorite {
+                background-position:0 -182px;
+                &.added {
+                  background-position:0 -208px;
+                  .opacity(80);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .favorite-list{  
+      li{
+         display: none;
+      }
+      li.added{
+            display: block;
+          }
+    }
+  }
+}
+
+
+.tools {
+  margin-top:7px;
+  background:url(../img/main-menu.png);
+  display:block;
+  width:49px;
+  height:43px;
+  display:inline-block;
+  margin-right:5px;
+  &.channel {
+    background-position:0 0;
+    outline:none;
+    &:hover {
+      background-position:-49px 0px;
+    }
+  }
+  &.record {
+    background-position:0 -43px;
+    outline:none;
+    &:hover {
+      background-position:-49px -43px;
+    }
+  }
+  &.epg {
+    background-position:0 -86px;
+    outline:none;
+    &:hover {
+      background-position:-49px -86px;
+    }
+  }
+  &.favorite {
+    background-position:0 -129px;
+    outline:none;
+    &:hover {
+      background-position:-49px -129px;
+    }
+  }
+}
+
+.channel-name {
+  font-size:@baseFontSize + 6px;
+  font-weight:bold;
+  color:@white;
+  float:left;
+  line-height:56px;
+  margin-left:10px;
+}
+.program-tools {
+  float:right;
+  width:180px;
+  .btn-group {
+    float:right;
+  }
+}
+
+.line {
+  width:0;
+  height:28px;
+  float:left;
+  border-right:1px solid #2f2f2f;
+  margin:14px 7px;
+}
+
+.open {
+  .channel {
+    background-position:-49px 0px;
+  }
+}

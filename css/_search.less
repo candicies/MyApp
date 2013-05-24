@@ -1,0 +1,128 @@
+.control-area {
+  height: 50px;
+  //margin-bottom: 20px;
+  border-bottom: 1px solid #848484;
+  -moz-transition: width, height 0.3s ease-in;
+  -o-transition: width, height 0.3s ease-in;
+  -webkit-transition: width, height 0.3s ease-in;
+  background: url(../img/stripe-pattern.png);
+  
+  .container {
+    padding-top: 10px;
+  }
+  
+  .btn-search {
+    background:none;
+    border:0;
+    width:31px;
+    height:30px;
+    text-indent:-10000px;
+    background:url(../img/search.png) 0 0 no-repeat;
+    margin-left:5px;
+    &:hover {
+      background-position:-31px 0;
+    }
+    &:active {
+      background-position:-31px 1px;
+    }
+  }
+}
+
+
+.searchresult-area {
+  .container {
+    background-color: #FFF;
+    box-shadow:0 0 15px rgba(0,0,0,0.25);
+    padding-bottom:30px;
+    border:1px solid #e1e7e7;
+    border-top-width:0;
+    .border-radius(0 0 4px 4px);
+  }
+  
+  .result-header {
+    width:96%;
+    margin:0 auto;
+    border-bottom: 1px solid #DDD;
+    padding:15px 0 5px 0;
+    overflow: hidden;
+    .search-title {
+      margin-left:5px;
+      span.highlight {
+        color: #559;
+      }
+    }
+    .search-count {
+      margin-right:5px;
+      float: right;
+    }
+  }
+  
+  .search-result {
+    width:96%;
+    margin:0 auto;
+    .search-notfound{
+      padding:10px 15px;
+      margin-top: 20px; 
+      position:relative;
+      color:#ff7e00;
+      font-size:@baseFontSize + 4px;
+    }
+    .result-program {
+      padding:10px 15px;
+      margin-top: 20px; 
+      position:relative;
+      clear:both;
+      .span9 {
+        h4 {
+          font-size:@baseFontSize + 2px;
+          display:inline-block;
+        } 
+        div.switchBtn {
+          position:absolute;
+          display:inline-block;
+          margin-left:15px;
+          top:12px;
+        }
+        .pg-info {
+          color:#0f831d;
+          margin-top:10px;
+          span {
+            margin-right:20px;
+          }
+        }
+        p {
+          margin-bottom:0;
+          margin-top:8px;
+        } 
+      }
+      .span2 {
+        position:relative;
+        div {
+          position:absolute;
+          &.switchBtn {
+            right:0;
+            top:22px;
+          }
+          &.play-program {
+            right:65px;
+            top:14px;
+            cursor:pointer;
+            &:hover {
+              background-position:-32px 0;
+            }
+          }
+        }
+      }
+    }
+     
+    .result-program:nth-child(odd) {
+      background:#f2f8f8;
+    } 
+  }
+  
+  .loading-indicator {
+    text-align:center;
+    margin: 5px 0;
+    display: none;
+  }
+}

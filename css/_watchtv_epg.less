@@ -1,0 +1,96 @@
+@time-width: 240px;
+
+
+.epg-area {
+  background:#e8e9e9 url(../img/main-bg.png) 0 0 repeat-x;
+  height:auto;
+  
+  .epg-scroll {
+      width:860px;
+      margin:20px auto;
+      
+      .scroll-pane {
+          min-width:100%;
+          width: auto;
+          height: 200px;
+          overflow: auto;
+        }
+        .horizontal-only {
+          height:25px;
+          max-height: 200px;
+        }
+        .scroll-pane2 {
+          margin-top:10px;
+          overflow: hidden; 
+          height: 40px
+        }
+        .epg-timeline {
+          white-space: nowrap;
+          font-size: 0px;
+          div {
+            font-size:@baseFontSize - 1px;
+            width: @time-width;
+            display:inline-block
+          }
+        }
+        
+        .epg-programs{
+           white-space: nowrap;
+           position:relative;
+           width: @time-width * 24;
+          .program {
+            position:absolute;
+            padding:0;
+            display:inline-block;     
+            overflow:hidden;         
+            background-image:url(../img/pg-banner.png), url(../img/pg-banner-line.png);
+            background-repeat: no-repeat, repeat-x;
+            background-position: top right, top left;            
+            .mask {
+              position:absolute;
+              right:0;
+              top:0;
+              width:5px;
+              height:36px;
+              background:url(../img/pg-banner.png) right top no-repeat;
+              z-index:900;
+            }
+            .items {
+              position:relative;
+              padding:10px 0;
+              height:16px;
+              font-size:@baseFontSize - 1px;          
+              z-index:10;
+              cursor:default;
+              //width:100%;
+              overflow:hidden;
+              white-space:nowrap;
+              div {
+                display:inline-block;
+                &.pg-title {
+                  width:auto;
+                  padding-left:3px;
+                  color:#0a4f6c;
+                  &:hover {
+                    color:#8007a3;
+                    cursor:pointer;
+                  }
+                }
+                &.pg-content {
+                  display:none;
+                }
+                &.pg-rec {
+                  width:auto;
+                }
+              }
+            }
+          }
+        }
+        
+        .time-indicator {
+          position: absolute;
+          top:5px; 
+        }
+    
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build">
+	<target name="build" depends="jslint">
+	
+	</target>
+	<taskdef name="jslint" classname="com.googlecode.jslint4java.ant.JSLintTask" />
+	<target name="jslint">
+		<jslint options="white,nomen" encoding="utf-8">
+			<predef>window,define,require,jQuery,Backbone,$,_</predef>
+			<formatter type="plain" destfile="jslint.log" />
+			<fileset dir="../js" includes="**/*.js" excludes="**/libs/**" />
+		</jslint>
+	</target>
+</project>

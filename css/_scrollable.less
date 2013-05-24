@@ -1,0 +1,84 @@
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+  */
+.scrollable {
+
+    /* required settings */
+    position:relative;
+    overflow:hidden;
+    width: 1000px;
+    height:340px;
+	background:url(../images/ad_bg.png) left top no-repeat;
+	
+}
+
+/*
+   root element for scrollable items. Must be absolutely positioned
+   and it should have a extremely large width to accomodate scrollable
+   items.  it's enough that you set the width and height for the root
+   element and not for this element.
+*/
+.scrollable .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+    clear:both;
+}
+
+.items div {
+    float:left;
+    width:1000px;
+	position:relative;
+	
+	.diagram {
+		position:absolute;
+		right:50px;
+		top:52px;
+		width:530px;
+		height:290px;
+	}
+	
+	.mycloudnas {
+		background:url(../images/d_mycloudnas.png);
+	}
+	
+}
+
+/* this makes it possible to add next button beside scrollable */
+.scrollable {
+    float:left;
+}
+
+/* position and dimensions of the navigator */
+.navi {
+    position:absolute;
+	left:25px;
+	bottom:70px;
+    width:200px;
+    height:20px;
+}
+
+
+/* items inside navigator */
+.navi a {
+    width:13px;
+    height:13px;
+    float:left;
+    margin:5px;
+    background:url(../images/navigator.png) 0 0 no-repeat;
+    display:block;
+    font-size:1px;
+}
+
+/* mouseover state */
+.navi a:hover {
+    background-position:0 -13px;
+	cursor:pointer;
+}
+
+/* active state (current page state) */
+.navi a.active {
+    background-position:0 -26px;
+	cursor:default;
+}

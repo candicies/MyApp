@@ -1,0 +1,379 @@
+@time-width: 240px;
+
+.epg-control-area{
+  overflow: auto;
+  
+  .date-controls{
+    .manualDiv {
+        .spanP10 {
+          #content {
+            #viewContent {
+               .controls.reset-space {
+                div {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+       }
+      
+      .dateScrollable {
+        /* required settings */
+        position:relative;
+        overflow:hidden;
+        width:567px;
+        height:50px;
+        margin-bottom:5px;
+        box-shadow:0 1px 2px rgba(0,0,0,0.35); 
+       }
+      .dateScrollable .dateItems {
+        /* this cannot be too large */
+        width:20000em;
+        position:absolute;
+        clear:both;
+        div{
+          float:left;
+          width:584px;
+          a {
+            float:left;
+            padding:5px 5px;
+            margin:0 0px;
+            width:70px;
+            height:38px;
+            position:relative;
+            border:1px solid #d1d1d1;
+            border-bottom-color:#c6c6c6;
+            border-right-width:0;
+            outline:0;
+            #gradient > .vertical(#ffffff, #dfdfdf);
+            text-align:center;
+            h4 {
+              font-size:@baseFontSize;
+              text-align:center;
+              color:#3e3e3e;
+            }
+            span{
+              color:#3e3e3e;
+            }            
+            &.active {
+              background:url(../img/selected-bg.png) center top no-repeat;
+              h4 {
+                color:#1d375e;
+              }
+              span{
+                color:#1d375e;
+              } 
+              &:hover {
+                background:url(../img/selected-bg.png) center top no-repeat;
+                cursor:default;
+              }
+            }
+          }
+          a:hover {
+            text-decoration:none;
+            #gradient > .vertical(#dfdfdf, #ffffff);
+          }
+        }
+      }
+      
+      /* this makes it possible to add next button beside scrollable */
+      .dateScrollable {
+          float:left;
+      }
+      
+      /* prev, next, prevPage and nextPage buttons */
+      a.browse {
+        display:block;
+        width:23px;
+        height:48px;
+        float:left;
+        cursor:pointer;
+        font-size:1px;
+        border:1px solid #d1d1d1;
+        border-bottom-color:#c6c6c6;
+        #gradient > .vertical(#ffffff, #dfdfdf);
+        margin-bottom:5px;
+        .border-radius(0 3px 3px 0);
+        box-shadow:0 1px 2px rgba(0,0,0,0.35); 
+        .qicons {
+          margin-top:16px;
+          margin-left:4px;
+        }
+      }
+      a.browse:hover {
+        border-color:#b9d7fc;
+        box-shadow:0 0 2px rgba(26,107,255,0.8); 
+      }
+      
+      /* right */
+      a.rightBtn { 
+        clear:right; 
+        margin-right: 0px;
+      }      
+      
+      /* left */
+      a.leftBtn { 
+        margin-left: 0px;
+        .border-radius(3px 0 0 3px);
+      }
+      
+      
+      /* disabled navigational button */
+      a.disabled {
+        background:#dfdfdf;
+        cursor:default;
+        .qicons {
+          .opacity(20);
+        }
+        &:hover {
+          background:#dfdfdf;
+          border:1px solid #d1d1d1;
+          border-bottom-color:#c6c6c6;
+          box-shadow:0 1px 2px rgba(0,0,0,0.15); 
+        }
+      }
+   }
+}
+
+div.switchBtn {
+  width:50px;
+  height:15px;
+  overflow:hidden;
+  display:block;
+  padding:0;
+  position:relative;
+  z-index:100;
+  //clear:both;
+  .border-radius(2px);
+  background-image:url(../img/switch.png);
+  margin-left:5px;
+  &.on {
+    background-position: 0 0;
+  }
+  &.off {
+    background-position: 50px 0;
+  }
+}
+
+.epg-programs-area {
+  margin-bottom:40px;
+  //channel list
+  .epg-channellist {
+    //padding: 8px 0;
+    margin-top: 32px;
+    box-shadow:0 0 5px rgba(0,0,0,0.6);
+  }
+  
+  .nav-list{
+    list-style:none;
+    li {      
+      position:relative;
+      a {
+        padding:3px 5px;
+      }
+    }
+    .nav-header {
+      background:#1d375e;
+      margin-bottom:1px;
+    }
+    a {
+      background:#525252;
+      margin-bottom:1px;
+      text-shadow:none;
+      color:#fff;
+      height: 38px;
+      font-weight:bold;
+      &:hover {
+        background:#525252;
+      }
+      i {
+        float: right;
+        position:absolute;
+        bottom:2px;
+        right:-12px;
+        &.qtool {
+          width:27px;
+          height:26px;
+          background:url(../img/ctrl-tools.png) 0 0 no-repeat;
+          .opacity(40);
+          &:hover {
+            .opacity(70);
+          }
+          &.favorite {
+            background-position:0 -182px;
+            &.added {
+              background-position:0 -208px;
+              .opacity(90);
+            }
+          }
+          &.playnow {
+            right:18px;
+          }
+        }
+      }
+    }
+    a.active{
+       color: #FFF;
+       background: #08C;
+       i {
+          //.icon-white;
+       }
+    }
+  }
+  
+  .span2 {
+    padding-bottom:5px;
+  }
+  
+  //program list 
+  .span8 {
+    margin-left:2px;    
+    position:relative;    
+    .mask {
+      position:absolute;
+      width:50px;
+      z-index:900;
+      background:url(../img/mask.png) right top repeat-y;
+      right:-125px;
+      top:32px;
+    }
+  }
+  
+  .epg-scroll {
+    width:740px;
+    margin-top: 32px;   
+    .scroll-btn {
+      position:fixed;
+      z-index:900;
+      width:40px;
+      height:40px;
+      background:#000;
+      &.right {
+        right:30px;
+      }
+    } 
+    .scroll-pane {
+      min-width:740px;
+      margin-top:-32px;
+      width: auto;
+      height:25px;
+      overflow: auto;
+      .jspHorizontalBar {
+        margin-bottom:4px;
+      }
+      &.fixed {
+        position:fixed;
+        top:-12px;
+        z-index:1020;
+        width:740px;      
+        margin-top:0;  
+        .jspHorizontalBar {
+          .box-shadow(0 0 3px rgba(0,0,0,.25);
+        }
+      }
+    }
+    //scrolling bar
+    .horizontal-only {
+      max-height: 200px;
+    }
+    .epg-timeline {
+      white-space: nowrap;
+      font-size: 0px;
+      visibility: hidden;
+      div {
+        font-size:@baseFontSize - 1px;
+        width: @time-width; 
+        display:inline-block
+      }
+    }    
+    //program content
+    .scroll-pane2 {
+      margin-top:7px;
+      overflow:hidden; 
+      background:#fff;
+      box-shadow:0 0 5px rgba(0,0,0,0.4);
+    }    
+    .epg-programs{
+       white-space: nowrap;
+       position:relative;       
+       .timeline-header {          
+          font-size:0;
+          div {
+            font-size:@baseFontSize - 1px;
+            width: @time-width; 
+            display:inline-block;            
+            background:#232831 url(../img/dot.png) top left repeat-y;
+            height:24px;
+            color:#fff;
+            span {
+              margin-left:4px;
+            }
+          }
+       }
+      .timeline-channel{
+        height: 44px;
+        margin-top:1px;
+        background:#f2f2f2;
+        width:1000em;
+      }
+      .program {
+        position:absolute;
+        padding:0 0px;
+        display:inline-block;
+        overflow:hidden;
+        //background:#fff;
+        /*&.expand {
+          background:#a2d7ff;
+          .opacity(90);
+          .box-shadow(0 2px 4px rgba(0,0,0,.4));
+        }*/
+        .items {
+          position:relative;
+          padding:0;
+          height:44px;
+          font-size:@baseFontSize - 1px;          
+          z-index:10;
+          cursor:default;
+          background:#e4f1f7 url(../img/dot.png) top left repeat-y;
+          width:100%;         
+          &.selected {
+            background:#387ab8 url(../img/dot.png) top left repeat-y;
+            .pg-title {
+              color:#f4f9fd;
+              &:hover {
+                color:#f4f9fd;
+              }
+            }
+          }
+          .pg-title {
+            width:auto;
+            padding-left:5px;
+            padding-top:5px;
+            color:#0a4f6c;
+            //font-weight:bold;
+            &:hover {
+              color:#8007a3;
+              cursor:pointer;
+            }
+          } 
+          //&:hover {
+            //background:#a2d7ff;
+          //}
+          .switchBtn {
+            clear:both;
+          }
+        }
+      }
+    }    
+  }
+}
+
+
+
+.popover {
+  &.top    { margin-top:  0px; }
+  &.right  { margin-left:  5px; }
+  &.bottom { margin-top:   -5px; }
+  &.left   { margin-left: 0px; }
+}

@@ -1,0 +1,1 @@
+java -jar C:/Sources/jslint4java-2.0.1/jslint4java-2.0.1.jar --predef jQuery,Backbone,$,_ --white %1

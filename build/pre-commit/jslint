@@ -1,0 +1,4 @@
+#!/bin/sh
+PATH=$PATH:/cygdrive/c/Windows/system32
+export PATH
+java -jar c:/Sources/jslint4java-2.0.1/jslint4java-2.0.1.jar --predef jQuery,Backbone,$,_ --white $1

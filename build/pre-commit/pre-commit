@@ -1,0 +1,170 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""SVN pre-commit hook
+
+Pre-commit hook script for Subversion.
+Runs before every commit on the SVN server
+performing the following checks before allowing any
+changes to be applied to the repository:
+
+- PHP Syntax Check
+- BASH Syntax Check
+- Javascript Syntax Check
+
+It requires:
+- BASH
+- PHP
+- Javascript Lint (http://www.javascriptlint.com/)
+
+Usage:
+pre-commit <repository> <transaction>
+
+:Author
+    Andres Gattinoni <andresgattinoni@gmail.com>
+
+:Version
+    0.1
+"""
+import sys
+import os
+import tempfile
+import subprocess
+
+# Path to svnlook command
+_SVN_LOOK = '/usr/bin/svnlook'
+
+# Path to BASH binary
+_BASH_PATH = '/bin/bash'
+# List of extensions for BASH files
+_BASH_EXTENSIONS = ['.sh']
+
+# Path to PHP binary
+_PHP_PATH = '/usr/bin/php'
+# List of extensions for PHP files
+_PHP_EXTENSIONS = ['.php']
+
+# Path to Javascript Lint
+_JS_PATH = 'jslint'
+# List of extensions for Javascript files
+_JS_EXTENSIONS = ['.js']
+
+def print_error (error):
+    """Prints an error message to stderr"""
+    sys.stderr.write("%s\n"%error)
+
+def run (cmd, token, replace):
+    """Runs a command returing its return code
+       and prints any output in case of retcode > 0.
+       The 'token' and 'replace' vars are meant to
+       replace a token with another string in the error
+       message."""
+    p = subprocess.Popen(cmd, \
+                         stdout=subprocess.PIPE, \
+                         stderr=subprocess.PIPE)
+    p.wait()
+    if p.returncode != 0:
+	    print_error("**SYNTAX CHECK ERROR**")
+        print_error("".join(p.communicate()).replace(token, replace))
+    return p.returncode
+
+def check_bash (filename, realname):
+    """Performs a syntax check for a BASH file"""
+    return run([_BASH_PATH, '-n', filename], filename, realname)
+
+def check_php (filename, realname):
+    """Performs a syntax check for a PHP file"""
+    return run([_PHP_PATH, '-l', filename], filename, realname)
+
+def check_js (filename, realname):
+    """Performs a syntax check for a Javascript file"""
+    r = run([_JS_PATH, filename], filename, realname)
+    if r > 1: # ignore warnings
+        return r
+    return 0
+
+def svn_look (cmd, txn, rep, other=None):
+    """Executes svnlook with a command on a transaction
+       of a repository. It returns the Process object after
+       running the command. If the return code is not zero
+       it raises an Exception"""
+    command = [_SVN_LOOK, cmd, '-t', txn, rep]
+    if other is not None:
+        command.append(other)
+    p = subprocess.Popen(command, \
+                         stdout=subprocess.PIPE, \
+                         stderr=subprocess.PIPE)
+    p.wait()
+    if p.returncode != 0:
+        raise Exception("".join(p.communicate()))
+    return p
+
+def create_tmp (filename, txn, rep):
+    """Takes an SVN filename, performs an svnlook cat
+       and stores the content in a temporary file so 
+       that it can be used for syntax checks.
+       It returns the name of the temporary file.
+       It raises an Exception if svnlook returns an error"""
+    p = svn_look('cat', txn, rep, filename)
+    (fd, tmp) = tempfile.mkstemp()
+    fd = open(tmp, 'w')
+    fd.write(p.communicate()[0])
+    fd.close()
+    return tmp
+
+def get_changed_files (rep, txn):
+    """Uses svnlook to get a list of the files with
+       changes on the current revision.
+       It returns a list of tuples with the actual 
+       filename and the path of the temporary file 
+       created for each file.
+       Only files with PHP, BASH and Javascript
+       extensions are returned."""
+    p = svn_look('changed', txn, rep)
+    output = p.communicate()[0].strip()
+    exts = list(_PHP_EXTENSIONS+_BASH_EXTENSIONS+_JS_EXTENSIONS)
+    return [(f[4:], create_tmp(f[4:], txn, rep)) for f in output.split('\n') if f[0] in ('A', 'U') and os.path.splitext(f[4:])[1] in exts]
+
+def check_file (filedata, checkers):
+    """Runs the appropriate syntax check according
+       to the file's extension"""    
+    (filename, tmpfile) = filedata
+    (name, ext) = os.path.splitext(filename)
+    for extensions, check in checkers:
+        if ext in extensions:
+            r = check(tmpfile, filename)
+            return 1 if r > 0 else 0    
+    return 0
+
+def check_commit (rep, txn):
+    """Performs a battery of syntax checks on the
+       files that were committed"""
+    checkers = [(_JS_EXTENSIONS, check_js)]
+    try:
+        files = get_changed_files(rep, txn)
+    except Exception, e:
+        print_error(str(e))
+	return 1
+    errors = 0
+    if files is not None:
+        for f in files:
+            errors += check_file(f, checkers)
+            os.unlink(f[1]) # remove tmp file
+    if errors > 0:
+        print_error("%d error(s) detected"%errors)
+    return errors
+
+def main (argv):
+    """Main function. Entry point of this script.
+       Checks the script parameters and calls check_commit"""
+    if len(argv) != 3:
+        print_error("Usage: %s <repository> <transaction>"%argv[0])
+        return 1
+
+    rep = argv[1]
+    txn = argv[2]
+
+    return check_commit(rep, txn)
+
+if __name__ == "__main__":
+    """Run the main function of the script"""
+    sys.exit(main(sys.argv))
